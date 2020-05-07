@@ -16,12 +16,16 @@ const average = (parameter) => {
   let x = 0;
   for (let i = 0; i < parameter.length; i += 1) {
     const para = parameter[i];
-    if (typeof para !== 'number') {
+    if (typeof para !== 'number' ||
+      typeof para === 'string') {
       return undefined;
     }
     x += parameter[i];
   }
-  return Math.trunc(x / parameter.length);
+  if (x === 0 || parameter.length === 0) {
+    return 0;
+  }
+  return Math.round(x / parameter.length);
 };
 
 
