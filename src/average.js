@@ -13,20 +13,18 @@
 */
 
 const average = (parameter) => {
-//   let x = 0;
-//   for (let i = 0; i < parameter.length; i += 1) {
-//     const para = parameter[i];
-//     if (typeof para !== 'number' ||
-//       typeof para === 'string') {
-//       return undefined;
-//     }
-//     x += parameter[i];
-//   }
-//   if (x === 0 || parameter.length === 0) {
-//     return 0;
-//   }
-//   return Math.round(x / parameter.length);
-// };
-
+  let x = 0;
+  if (parameter.length === 0) {
+    return undefined;
+  }
+  for (let i = 0; i < parameter.length; i += 1) {
+    if (typeof parameter[i] !== 'number') {
+      return undefined;
+    } else {
+      x += parameter[i];
+    }
+  }
+  return Math.round(x / parameter.length);
+}
 
 module.exports = average;
