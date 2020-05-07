@@ -20,11 +20,10 @@ const average = (parameter) => {
   for (let i = 0; i < parameter.length; i += 1) {
     if (typeof parameter[i] !== 'number') {
       return undefined;
-    } else {
-      x += parameter[i];
     }
+    x += parameter[i];
   }
   return Math.round(x / parameter.length);
-}
+};
 
 module.exports = average;
